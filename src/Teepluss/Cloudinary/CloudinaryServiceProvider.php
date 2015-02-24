@@ -18,7 +18,9 @@ class CloudinaryServiceProvider extends ServiceProvider {
 	 */
 	public function boot()
 	{
-		$this->package('teepluss/cloudinary');
+		$this->publishes([
+			__DIR__.'/../../../config/config.php'  => config_path('cloudinary.php'),
+		]);
 	}
 
 	/**
